@@ -29,14 +29,28 @@ class Vehicle{
 // let there be an addition of electric functionality
 // modify this class to calculatethe range
 
+// add electric meter to measure the usage of batter
+// 120 v --- 1.2kvA ----- 200km 
+
 class hybridVhc extends Vehicle{
     constructor(efficiency,fuelcap,electric){
         super(efficiency,fuelcap)
         this.electricRange = electric;
     }
-    // method overriding
+    // meth(od overriding
     calcRange(){
         return this.capacity*this.efficiency + this.electricRange;
+    }
+}
+
+class Electrometer extends hybridVhc{
+    constructor(efficiency,fuelcap,electric){
+        super(efficiency,fuelcap,electric)
+
+    }
+    //
+    electroMeterCalc(){
+
     }
 }
 
@@ -45,6 +59,8 @@ ordinaryVehicle.calcRange()
 
 let hybrid = new hybridVhc(89,112,200)
 ordinaryVehicle.calcRange()
+
+let elB = new Electrometer()
 
 
 
